@@ -36,10 +36,9 @@ For ESE 519 Final project. Drone with learning.
  <img width="500" alt="circuit" src="https://user-images.githubusercontent.com/87698138/205519976-f471acd5-c7fc-46cb-b8ed-c9c0dd39164f.jpg">
   
   - **troubleshooting:**
-    - 如何从0开始让扇叶转动
-    - 使用示波器hack无人机原有电路得知舵机是DC输入
-    - pwm转DC
-    - 调整pwm让舵机可以以不同速度转动
+    - How to make the fan blades turn from 0
+    - Using an oscilloscope to hack the original circuit to learn that the servo is DC input,then the group using pio and pwm to modify the value of the DC current and let the servo rotate with different speed. 
+
   - **demos:**
     - video
     The demo is given as follows:  

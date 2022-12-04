@@ -31,7 +31,19 @@ For ESE 519 Final project. Drone with learning.
     
     <img width="500" alt="RP2040" src="media/materials/RP2040.jpeg">
 
+    -LSM6DS3
+
+    <img width="500" alt="RP2040" src="media/materials/LSM6DS3.png">
+
+
   - **design:**
+  * Self-designed drone with hacking:
+  Hacking:
+         1. Borrow the shell of bought drone.
+         2. Hacking the structure.
+         3. Hacking the signals to control the servo.  
+
+
  
  <img width="500" alt="circuit" src="https://user-images.githubusercontent.com/87698138/205519976-f471acd5-c7fc-46cb-b8ed-c9c0dd39164f.jpg">
   

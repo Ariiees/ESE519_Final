@@ -19,7 +19,17 @@ For ESE 519 Final project. Drone with learning.
     - https://cla.purdue.edu/academic/rueffschool/ad/etb/resources/robotics01_SN754410_Arduino.pdf
 - **media:**
   - **materials:**
-    - 整理一下元器件的图片 用元器件名称命名图片
+    - ### Pico4ML
+
+![Picon4ML](media/materials/Pico4ML.jpeg)
+
+### MiniDrone
+
+![Drone](media/materials/Mini_Drone.jpg)
+
+###RP2040
+![RP2040](media/materials/RP2040.jpeg)
+
   - **design:**
  
   ![circuit](https://user-images.githubusercontent.com/87698138/205519976-f471acd5-c7fc-46cb-b8ed-c9c0dd39164f.jpg)

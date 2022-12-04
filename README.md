@@ -42,7 +42,8 @@ For ESE 519 Final project. Drone with learning.
     - 调整pwm让舵机可以以不同速度转动
   - **demos:**
     - video
-    
+    The demo is given as follows:
+    ![Demo](media/materials/Demo.gif)
     
     - circuit connection
     

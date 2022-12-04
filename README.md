@@ -1,9 +1,6 @@
 # ESE519_Final
 For ESE 519 Final project. Drone with learning.
 
-# ESE519_Final
-For ESE 519 Final project. Drone with learning.
-
 - **code:**
   - **working:**
     - RP2040

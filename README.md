@@ -21,19 +21,19 @@ For ESE 519 Final project. Drone with learning.
   - **materials:**
     - Pico4ML
     
-    <img width="500" alt="Picon4ML" src="media/materials/Pico4ML.jpeg">
+    <img width="300" alt="Picon4ML" src="media/materials/Pico4ML.jpeg">
 
     - MiniDrone
 
-    <img width="500" alt="Drone" src="media/materials/Mini_Drone.jpg">
+    <img width="380" alt="Drone" src="media/materials/Mini_Drone.jpg">
 
     - RP2040
     
-    <img width="500" alt="RP2040" src="media/materials/RP2040.jpeg">
+    <img width="300" alt="RP2040" src="media/materials/RP2040.jpeg">
 
     -LSM6DS3
 
-    <img width="500" alt="RP2040" src="media/materials/LSM6DS3.png">
+    <img width="300" alt="RP2040" src="media/materials/LSM6DS3.png">
 
 
   - **design:**

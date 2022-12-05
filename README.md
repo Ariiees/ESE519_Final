@@ -62,4 +62,5 @@ For ESE 519 Final project. Drone with learning.
     <img width="500" alt="now" src="media/media in readme/12.3circuit.jpeg">
 
 - **diagram:**
- - 画一张完整的图片 包含全部的设计
+ 
+ <img width="500" alt="now" src="media/media in readme/diagram.jpeg">

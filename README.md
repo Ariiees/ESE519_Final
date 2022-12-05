@@ -5,7 +5,7 @@ For ESE 519 Final project. Drone with learning.
   - **working:**
     - RP2040
     - balance board Python code
-    - PIO PWM code on PIO 0:修改到没有main只有调用的样式
+    - PIO PWM code on PIO 0
     - I2C communication on PIO 1 from lab 2B
   - **in-progress:**
     - Pico4ML

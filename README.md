@@ -19,6 +19,13 @@ add a git here
 | RP2040 | Contoler | PICO4ML |
 | A2 | X | .. |
 | ... | ... | ... |
+| RP2040 | Contoler | PICO4ML |
+| :--| :--  |:-- |
+| 'A2 | X | N/A |
+|  |  |   |     |
+|  |  |   |     |
+|  |  |   |     |
+
 
 add picture and description here.
 
@@ -27,28 +34,37 @@ add picture and description here.
 add code description here.
 
 **RP2040_Drone**
+
 xxxx
 
 **PICO4ML_IMU**
+
 xxxx
 
 **RP2040_Servo**
+
 xxxx
 
 **PICO4ML_Camera**
+
 xxxx
 
 ### Communication protocol 【Code between each MCU】
 
 **RP2040_Drone with PICO4ML_IMU**
+
 xxxx
 
 **RP2040_Servo with PICO4ML_Camera**
+
 xxxx
 
 ## Further...
+
 We plan to ...
 
 ## File description
+
 【File_name】: What is it
+
 ...

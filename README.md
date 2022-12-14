@@ -17,9 +17,6 @@ add a git here
 **PIN MAP**
 
 | RP2040 | Contoler | PICO4ML |
-| A2 | X | .. |
-| ... | ... | ... |
-| RP2040 | Contoler | PICO4ML |
 | :--| :--  |:-- |
 | 'A2 | X | N/A |
 |  |  |   |     |
@@ -67,4 +64,5 @@ We plan to ...
 
 【File_name】: What is it
 
-...
+【README_midpoint】: Our midpoint project report
+

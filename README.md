@@ -1,5 +1,14 @@
 # ESE519_Finald
+
 For ESE 519 Final project. balanced board controled Drone and Panel kit Camera.
+
+**TEAM - I believe I can fly:**
+
+Yuxuan Li: https://github.com/Yuxuan-Li295
+
+Xingqi Pan: https://github.com/anniepan8215
+
+Yuxin Wang: https://github.com/Ariiees
 
 
 ## What it does?
@@ -65,12 +74,4 @@ We plan to ...
 【File_name】: What is it
 
 【README_midpoint】: Our midpoint project report
-
-## TEAM - I believe I can fly
-
-Yuxuan Li: https://github.com/Yuxuan-Li295
-
-Xingqi Pan: https://github.com/anniepan8215
-
-Yuxin Wang: https://github.com/Ariiees
 

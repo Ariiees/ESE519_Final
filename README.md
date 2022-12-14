@@ -16,9 +16,9 @@ add a git here
 
 **PIN MAP**
 
-|RP2040|Contoler|PICO4ML|
-|A2|X|..|
-|...|...|...|
+| RP2040 | Contoler | PICO4ML |
+| A2 | X | .. |
+| ... | ... | ... |
 
 add picture and description here.
 
@@ -46,7 +46,7 @@ xxxx
 **RP2040_Servo with PICO4ML_Camera**
 xxxx
 
-## Feather...
+## Further...
 We plan to ...
 
 ## File description

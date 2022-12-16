@@ -85,9 +85,36 @@ xxxx
 
 **RP2040_Drone with PICO4ML_IMU**
 
-xxxx
+We use 3 pins to indict the pattern of drone's direction. `000` means stay, '001': forward, `010`: backward, `011`: left, `100`: right.
 
-**RP2040_Servo with PICO4ML_Camera**
+For RP2040, it will get the digital value of pin, and distinguish the pattern.
+
+```
+int get_pattern(uint pin1, uint pin2, uint pin3){
+    int a, b, c;
+    sleep_us(50);
+    if(gpio_get(pin1)==0){
+        a = 0;
+    }else{
+        a = 1;
+    }
+
+    if(gpio_get(pin2)==0){
+        b = 0;
+    }else{
+        b = 1;
+    }
+
+    if(gpio_get(pin3)==0){
+        c = 0;
+    }else{
+        c = 1;
+    }
+    int pattern = c << 2 | b << 1 | a;
+    return pattern;
+}
+```
+
 
 xxxx
 

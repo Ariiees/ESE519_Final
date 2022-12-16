@@ -29,3 +29,7 @@ int ESP1_TX         = 1;
 
 ```
 
+# reference
+https://github.com/ArduCAM/RPI-Pico-Cam/tree/master/rp2040_hm01b0_st7735
+
+

@@ -87,6 +87,54 @@ ICM42622::Icm42622ReadAccel(&accex,&accey,&accez);
 //printf("Gyro: X:%.2f, Y: %.2f\n",x,y);
 printf("Acce: X:%.2f, Y: %.2f,Z:%.2f\n",accex,accey,accez);
 ``` 
+Then we judge the degree of tilt of the drone and assign different signal indicator that and pass it to RP2040.
+
+```c
+if(accex >= -1.1 && accex <= -0.7)
+    {
+      gpio_put(26,0);
+      gpio_put(27,0);
+      gpio_put(28,1);
+      printf("Acce: X:%.2f, Y: %.2f\n",accex,accey);
+      // move_forward(pio_pwm,smx,smy);
+      printf("forward\n");
+    }
+    else if(accex >= 0.7 && accex <= 1.1)
+    {
+      gpio_put(26,0);
+      gpio_put(27,1);
+      gpio_put(28,0);
+      printf("Acce: X:%.2f, Y: %.2f\n",accex,accey);
+      // move_back(pio_pwm, smx, smy);
+      printf("back\n");
+    }
+    else if(accey >= 0.6 && accey <= 1.1)
+    {
+      gpio_put(26,0);
+      gpio_put(27,1);
+      gpio_put(28,1);
+      printf("Acce: X:%.2f, Y: %.2f\n",accex,accey);
+      //move_left (pio_pwm, smx, smy);
+      printf("left\n");
+    }
+    else if(accey >= -1.1 && accey <= -0.6)
+    {
+      gpio_put(26,1);
+      gpio_put(27,0);
+      gpio_put(28,0);
+      printf("Acce: X:%.2f, Y: %.2f\n",accex,accey);
+      // move_right(pio_pwm, smx, smy);
+      printf("right\n");
+    }
+    else{
+      gpio_put(26,0);
+      gpio_put(27,0);
+      gpio_put(28,0);
+      printf("Acce: X:%.2f, Y: %.2f\n",accex,accey);
+      // stay(pio_pwm, smx, smy);
+      printf("stay\n");
+    }
+```
 
 **RP2040_Servo**
 

@@ -49,7 +49,7 @@ Amplifier: Scale 3V to 5V
 
 Controller: Original Controller PCB for drone
 
-<img width="400" alt="controller src=>
+<img width="400" alt="controller" src=media/hardware_citcuit/controller.jpg>
 
 Indicator and filter: indicate the circuit connection and filt the PWM ourtput
 
@@ -213,26 +213,20 @@ pwm_set_clkdiv(slice_UD, 256.0f);  /// Setting the divider to slow down the cloc
 pwm_set_wrap(slice_UD, 9804);      /// setting the Wrap time to 9764 (20 ms)
 pwm_set_enabled(slice_UD, true);
 ... \\\inside loop
-if(pre_max_x < max_x){
+    if(pre_max_x < max_x){
 	// match rotation degree with distance between t and t-1
 	pwm_set_chan_level(slice_LR, channel_LR, (735-((735-490)*(max_x-pre_max_x)/(90))));
-	// pwm_set_chan_level(slice_LR, channel_LR, 490);
-	// sleep_ms(10);
-}else{
+    }else{
 	pwm_set_chan_level(slice_LR, channel_LR,  (735+((980-735)*(pre_max_x-max_x)/(90))));
-	// pwm_set_chan_level(slice_LR, channel_LR, 980);
-	// sleep_ms(10);
-}
-if(pre_max_y < max_y){
+
+    }
+    if(pre_max_y < max_y){
 	pwm_set_chan_level(slice_UD, channel_UD,  (735-((735-490)*(max_y-pre_max_y)/(90))));
-	// sleep_ms(1000);
-}else{
+    }else{
 	pwm_set_chan_level(slice_UD, channel_UD,  (735+(980-735)*((pre_max_y-max_y)/(90))));
-	// sleep_ms(1000);
-	// pwm_set_chan_level(slice_UD, channel_UD, 490);
-}
-pre_max_x = max_x;
-pre_max_y = max_y;
+    }
+    pre_max_x = max_x;
+    pre_max_y = max_y;
 ```
 
 ### Communication protocol 【Code between each MCU】

@@ -87,7 +87,7 @@ ICM42622::Icm42622ReadAccel(&accex,&accey,&accez);
 //printf("Gyro: X:%.2f, Y: %.2f\n",x,y);
 printf("Acce: X:%.2f, Y: %.2f,Z:%.2f\n",accex,accey,accez);
 ``` 
-Then we judge the degree of tilt of the drone and assign different signal indicator that and pass it to RP2040.
+Then we judge the degree of tilt of the drone and assign different signal indicator that and pass it to RP2040 to control the fly direction of it.
 
 ```c
 if(accex >= -1.1 && accex <= -0.7)

@@ -32,4 +32,7 @@ int ESP1_TX         = 1;
 # reference
 https://github.com/ArduCAM/RPI-Pico-Cam/tree/master/rp2040_hm01b0_st7735
 
+# Photo
+![IMAGE ALT TEXT](media/media%20in%20readme/cam_track.jpg)
+
 

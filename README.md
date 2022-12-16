@@ -1,4 +1,4 @@
-# ESE519_Final
+# ESE519_Finald
 
 For ESE 519 Final project. balanced board controled Drone and Panel kit Camera.
 
@@ -28,9 +28,11 @@ add a git here
 | RP2040 | Controller | PICO4ML |
 | :--| :--  |:-- |
 | A2 | X | N/A |
-|  A3  |   |     |
-|  |  |   |     |
-|  |  |   |     |
+|  A3  | Y | N/A |
+| MO | N/A | GP28 |
+| MI | N/A | GP27 |
+| SCK | N/A | GP26 |
+| GND | GND | GND |
 
 
 add picture and description here.
@@ -43,7 +45,7 @@ add code description here.
 
 We use PIO to write PWM that out put a DC voltage which will mimic the output the joystick, and this is the main part that we used to control the drone.
 
-```
+```c
 // partten: 001
 void move_forward(PIO pio, uint sm_x, uint sm_y){
     pio_pwm_set_level(pio, sm_x, 125);
@@ -70,6 +72,7 @@ void move_right(PIO pio, uint sm_x, uint sm_y){
 ```
 
 **PICO4ML_IMU**
+
 Initialize three ports for output and communication between RP2040 and Pico4ML:
 ```c
   ICM42622::Icm42622Init();

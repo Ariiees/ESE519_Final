@@ -17,7 +17,7 @@ You coud using a balanced board to control the fly of the drone in real time(mim
 
 ### Demo
 
-add a git here
+https://www.youtube.com/watch?v=_GHgrHEjJ3k
 
 ## How we made it
 

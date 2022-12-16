@@ -44,6 +44,7 @@ https://www.youtube.com/watch?v=_GHgrHEjJ3k
 ##Hardware Circuit
 
 Amplifier: Scale 3V to 5V
+
 <img width="400" alt="amplifier" src=media/hardware_citcuit/amplifier.jpg>
 
 Controller: Original Controller PCB for drone

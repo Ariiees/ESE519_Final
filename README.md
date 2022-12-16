@@ -49,7 +49,7 @@ Amplifier: Scale 3V to 5V
 
 Controller: Original Controller PCB for drone
 
-<img width="400" alt="controller" src=media/hardware_citcuit/controller.jpg>
+<img width="400" alt="controller src=>
 
 Indicator and filter: indicate the circuit connection and filt the PWM ourtput
 

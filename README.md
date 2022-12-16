@@ -46,7 +46,6 @@ add picture and description here.
 
 ### Control theory 【Code for each MCU】
 
-add code description here.
 
 **RP2040_Drone**
 

@@ -154,6 +154,7 @@ while (true) {
     // ST7735_DrawImage(0, 0, 80, 160, arducam_logo);
     pre_max_x = 0; // x index of max value t-1 time
     pre_max_y = 0; // y index of max value t-1 time
+    /// Within the maximum tracking period
     for(track_period = 0; track_period < 100; track_period++){
         // gpio_put(PIN_LED, !gpio_get(PIN_LED));
         arducam_capture_frame(&config);
@@ -166,6 +167,7 @@ while (true) {
 	    for (int x = 0; x < 80; x++) {
 		uint8_t c = image_buf[(2+320-2*y)*324+(2+40+2*x)];
 		uint16_t imageRGB   = ST7735_COLOR565(c, c, c);
+		// record the location of pixel with highest luminous
 		if(imageRGB > max && imageRGB > 0xAAAA){
 		    max = imageRGB;
 		    max_x = x;
@@ -175,6 +177,7 @@ while (true) {
 		displayBuf[index++] = (uint8_t)(imageRGB)&0xFF;
 		}
     }
+    // show the path on the screen
     pre_displayBuf[max_x*max_y] = 0xFF;
     pre_displayBuf[max_x*max_y+1] = 0xFF;
     ST7735_DrawImage(0, 0, 80, 160, pre_displayBuf);

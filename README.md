@@ -13,7 +13,7 @@ Yuxin Wang: https://github.com/Ariiees
 
 ## What it does?
 
-You coud using a balanced board to control the....
+You coud using a balanced board to control the fly of the drone in real time(mimic the behavior of the joystick). 
 
 ### Demo
 
@@ -25,10 +25,10 @@ add a git here
 
 **PIN MAP**
 
-| RP2040 | Contoler | PICO4ML |
+| RP2040 | Controller | PICO4ML |
 | :--| :--  |:-- |
-| 'A2 | X | N/A |
-|  |  |   |     |
+| A2 | X | N/A |
+|  A3  |   |     |
 |  |  |   |     |
 |  |  |   |     |
 

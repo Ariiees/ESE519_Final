@@ -239,7 +239,7 @@ We use 3 pins to indict the pattern of drone's direction. `000` means stay, '001
 
 For RP2040, it will get the digital value of pin, and distinguish the pattern.
 
-```
+```C
 int get_pattern(uint pin1, uint pin2, uint pin3){
     int a, b, c;
     sleep_us(50);

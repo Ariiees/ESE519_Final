@@ -1,4 +1,4 @@
-# ESE519_Final
+# ESE519_Finald
 
 For ESE 519 Final project. balanced board controled Drone and Panel kit Camera.
 
@@ -17,7 +17,7 @@ You coud using a balanced board to control the fly of the drone in real time(mim
 
 ### Demo
 
-https://www.youtube.com/watch?v=_GHgrHEjJ3k
+add a git here
 
 ## How we made it
 
@@ -46,6 +46,7 @@ add picture and description here.
 
 ### Control theory 【Code for each MCU】
 
+add code description here.
 
 **RP2040_Drone**
 
@@ -149,40 +150,40 @@ if(accex >= -1.1 && accex <= -0.7)
 
 ```C
 while (true) {
-	memset(pre_displayBuf, 0, sizeof(pre_displayBuf)); // reset draft
-	// ST7735_DrawImage(0, 0, 80, 160, arducam_logo);
-	pre_max_x = 0; // x index of max value t-1 time
-	pre_max_y = 0; // y index of max value t-1 time
-	for(track_period = 0; track_period < 100; track_period++){
-		// gpio_put(PIN_LED, !gpio_get(PIN_LED));
-		arducam_capture_frame(&config);
+    memset(pre_displayBuf, 0, sizeof(pre_displayBuf)); // reset draft
+    // ST7735_DrawImage(0, 0, 80, 160, arducam_logo);
+    pre_max_x = 0; // x index of max value t-1 time
+    pre_max_y = 0; // y index of max value t-1 time
+    for(track_period = 0; track_period < 100; track_period++){
+        // gpio_put(PIN_LED, !gpio_get(PIN_LED));
+        arducam_capture_frame(&config);
 
-		uint16_t index = 0;
-		int max_x = 0;
-		int max_y = 0;
-		uint16_t max = 0;
-		for (int y = 0; y < 160; y++) {
-			for (int x = 0; x < 80; x++) {
-				uint8_t c = image_buf[(2+320-2*y)*324+(2+40+2*x)];
-				uint16_t imageRGB   = ST7735_COLOR565(c, c, c);
-				if(imageRGB > max && imageRGB > 0xAAAA){
-					max = imageRGB;
-					max_x = x;
-					max_y = y;
-				}
-				displayBuf[index++] = (uint8_t)(imageRGB >> 8) & 0xFF;
-				displayBuf[index++] = (uint8_t)(imageRGB)&0xFF;
-				}
+        uint16_t index = 0;
+        int max_x = 0;
+        int max_y = 0;
+        uint16_t max = 0;
+        for (int y = 0; y < 160; y++) {
+	    for (int x = 0; x < 80; x++) {
+		uint8_t c = image_buf[(2+320-2*y)*324+(2+40+2*x)];
+		uint16_t imageRGB   = ST7735_COLOR565(c, c, c);
+		if(imageRGB > max && imageRGB > 0xAAAA){
+		    max = imageRGB;
+		    max_x = x;
+		    max_y = y;
 		}
-		// pre_displayBuf[max_x*max_y+1] = 0xFF;
-
-		pre_displayBuf[max_x*max_y] = 0xFF;
-		pre_displayBuf[max_x*max_y+1] = 0xFF;
-		ST7735_DrawImage(0, 0, 80, 160, pre_displayBuf);
+		displayBuf[index++] = (uint8_t)(imageRGB >> 8) & 0xFF;
+		displayBuf[index++] = (uint8_t)(imageRGB)&0xFF;
+		}
+    }
+    pre_displayBuf[max_x*max_y] = 0xFF;
+    pre_displayBuf[max_x*max_y+1] = 0xFF;
+    ST7735_DrawImage(0, 0, 80, 160, pre_displayBuf);
+}    
 ```
 
 **PICO4ML_Servo_Control**
 ```C
+/// init pwm output pin
 gpio_set_function(PIN_OUT_LR, GPIO_FUNC_PWM);  /// Set the pin 0 to be PWM for bot servo
 gpio_set_function(PIN_OUT_UD, GPIO_FUNC_PWM);  /// Set the pin 1 to be PWM for top servo
 uint slice_LR   = pwm_gpio_to_slice_num(PIN_OUT_LR);
@@ -190,6 +191,7 @@ uint channel_LR = pwm_gpio_to_channel(PIN_OUT_LR);
 uint slice_UD   = pwm_gpio_to_slice_num(PIN_OUT_UD);
 uint channel_UD = pwm_gpio_to_channel(PIN_OUT_UD);
 ...
+/// Setting core clock to generate matched signal for servo control 
 pwm_set_clkdiv(slice_LR, 256.0f);  /// Setting the divider to slow down the clock
 pwm_set_wrap(slice_LR, 9804);      /// setting the Wrap time to 9764 (20 ms)
 pwm_set_enabled(slice_LR, true);
@@ -197,27 +199,21 @@ pwm_set_enabled(slice_LR, true);
 pwm_set_clkdiv(slice_UD, 256.0f);  /// Setting the divider to slow down the clock
 pwm_set_wrap(slice_UD, 9804);      /// setting the Wrap time to 9764 (20 ms)
 pwm_set_enabled(slice_UD, true);
-... \\\inside loop
-if(pre_max_x < max_x){
+... ///inside loop
+    /// Set rotate degree for each servo to track the drone
+    if(pre_max_x < max_x){
 	// match rotation degree with distance between t and t-1
 	pwm_set_chan_level(slice_LR, channel_LR, (735-((735-490)*(max_x-pre_max_x)/(90))));
-	// pwm_set_chan_level(slice_LR, channel_LR, 490);
-	// sleep_ms(10);
-}else{
+    }else{
 	pwm_set_chan_level(slice_LR, channel_LR,  (735+((980-735)*(pre_max_x-max_x)/(90))));
-	// pwm_set_chan_level(slice_LR, channel_LR, 980);
-	// sleep_ms(10);
-}
-if(pre_max_y < max_y){
+    }
+    if(pre_max_y < max_y){
 	pwm_set_chan_level(slice_UD, channel_UD,  (735-((735-490)*(max_y-pre_max_y)/(90))));
-	// sleep_ms(1000);
-}else{
+    }else{
 	pwm_set_chan_level(slice_UD, channel_UD,  (735+(980-735)*((pre_max_y-max_y)/(90))));
-	// sleep_ms(1000);
-	// pwm_set_chan_level(slice_UD, channel_UD, 490);
-}
-pre_max_x = max_x;
-pre_max_y = max_y;
+    }
+    pre_max_x = max_x;
+    pre_max_y = max_y;
 ```
 
 ### Communication protocol 【Code between each MCU】

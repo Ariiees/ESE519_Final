@@ -161,39 +161,41 @@ if(accex >= -1.1 && accex <= -0.7)
 ```
 
 **PICO4ML_Camera_LED_TRACKING**
-
+Tracking each pixels captured by camera, find the location of the pixel with highest luminous and records it as the tracking path.
 ```C
 while (true) {
-	memset(pre_displayBuf, 0, sizeof(pre_displayBuf)); // reset draft
-	// ST7735_DrawImage(0, 0, 80, 160, arducam_logo);
-	pre_max_x = 0; // x index of max value t-1 time
-	pre_max_y = 0; // y index of max value t-1 time
-	for(track_period = 0; track_period < 100; track_period++){
-		// gpio_put(PIN_LED, !gpio_get(PIN_LED));
-		arducam_capture_frame(&config);
+    memset(pre_displayBuf, 0, sizeof(pre_displayBuf)); // reset draft
+    // ST7735_DrawImage(0, 0, 80, 160, arducam_logo);
+    pre_max_x = 0; // x index of max value t-1 time
+    pre_max_y = 0; // y index of max value t-1 time
+    for(track_period = 0; track_period < 100; track_period++){
+        // gpio_put(PIN_LED, !gpio_get(PIN_LED));
+        arducam_capture_frame(&config);
 
-		uint16_t index = 0;
-		int max_x = 0;
-		int max_y = 0;
-		uint16_t max = 0;
-		for (int y = 0; y < 160; y++) {
-			for (int x = 0; x < 80; x++) {
-				uint8_t c = image_buf[(2+320-2*y)*324+(2+40+2*x)];
-				uint16_t imageRGB   = ST7735_COLOR565(c, c, c);
-				if(imageRGB > max && imageRGB > 0xAAAA){
-					max = imageRGB;
-					max_x = x;
-					max_y = y;
-				}
-				displayBuf[index++] = (uint8_t)(imageRGB >> 8) & 0xFF;
-				displayBuf[index++] = (uint8_t)(imageRGB)&0xFF;
-				}
-		}
-		// pre_displayBuf[max_x*max_y+1] = 0xFF;
-
-		pre_displayBuf[max_x*max_y] = 0xFF;
-		pre_displayBuf[max_x*max_y+1] = 0xFF;
-		ST7735_DrawImage(0, 0, 80, 160, pre_displayBuf);
+        uint16_t index = 0;
+        int max_x = 0;
+        int max_y = 0;
+        uint16_t max = 0;
+        for (int y = 0; y < 160; y++) {
+            for (int x = 0; x < 80; x++) {
+                uint8_t c = image_buf[(2+320-2*y)*324+(2+40+2*x)];
+                uint16_t imageRGB   = ST7735_COLOR565(c, c, c);
+                if(imageRGB > max && imageRGB > 0xAAAA){
+		    // record the pixel with highest luminous
+                    max = imageRGB;
+	            max_x = x;
+	            max_y = y;
+                }
+                displayBuf[index++] = (uint8_t)(imageRGB >> 8) & 0xFF;
+                displayBuf[index++] = (uint8_t)(imageRGB)&0xFF;
+            }
+        }
+        // pre_displayBuf[max_x*max_y+1] = 0xFF;
+	// display the tracking path on the LCD screen
+        pre_displayBuf[max_x*max_y] = 0xFF;
+        pre_displayBuf[max_x*max_y+1] = 0xFF;
+        ST7735_DrawImage(0, 0, 80, 160, pre_displayBuf);
+}
 ```
 
 **PICO4ML_Servo_Control**
@@ -237,7 +239,7 @@ We use 3 pins to indict the pattern of drone's direction. `000` means stay, '001
 
 For RP2040, it will get the digital value of pin, and distinguish the pattern.
 
-```c
+```
 int get_pattern(uint pin1, uint pin2, uint pin3){
     int a, b, c;
     sleep_us(50);
@@ -263,8 +265,13 @@ int get_pattern(uint pin1, uint pin2, uint pin3){
 }
 ```
 After got the integer value of the pattern by applying the 'left shift' operation combined with the 'OR' operation we can directly return the pattern value.
+## Further...
+
+We plan to ...
 
 ## File description
+
+【File_name】: What is it
 
 【README_midpoint】: Our midpoint project report.
 
@@ -274,6 +281,5 @@ After got the integer value of the pattern by applying the 'left shift' operatio
 
 【code/cam_tracking】: The main code for camera tracking and servo controlling
 
-【media】: Include all the picture and gif we used in the REDAME
 
 

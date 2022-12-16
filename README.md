@@ -266,8 +266,6 @@ After got the integer value of the pattern by applying the 'left shift' operatio
 
 ## File description
 
-【File_name】: What is it
-
 【README_midpoint】: Our midpoint project report.
 
 【code/IBICF/motor/pwm_new.c】: Main code for RP2040_Drone.
@@ -276,5 +274,6 @@ After got the integer value of the pattern by applying the 'left shift' operatio
 
 【code/cam_tracking】: The main code for camera tracking and servo controlling
 
+【media】: Include all the picture and gif we used in the REDAME
 
 

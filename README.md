@@ -44,18 +44,19 @@ https://www.youtube.com/watch?v=_GHgrHEjJ3k
 ##Hardware Circuit
 
 Amplifier: Scale 3V to 5V
-![](media/hardware_citcuit/amplifier.jpg)
+<img width="400" alt="amplifier" src=media/hardware_citcuit/amplifier.jpg>
 
 Controller: Original Controller PCB for drone
 
-![](media/hardware_citcuit/controller.jpg)
+<img width="400" alt="controller" src=media/hardware_citcuit/controller.jpg>
 
 Indicator and filter: indicate the circuit connection and filt the PWM ourtput
 
-![](media/hardware_citcuit/indicator_and_filter.jpg)
+<img width="400" alt="indicator_and_filter" src=media/hardware_citcuit/indicator_and_filter.jpg>
 
 Tracking: track the LED in drone
-![](media/hardware_citcuit/tracking.jpg)
+
+<img width="400" alt="tracking" src=media/hardware_citcuit/tracking.jpg>
 
 ### Control theory 【Code for each MCU】
 

@@ -265,9 +265,7 @@ int get_pattern(uint pin1, uint pin2, uint pin3){
 }
 ```
 After got the integer value of the pattern by applying the 'left shift' operation combined with the 'OR' operation we can directly return the pattern value.
-## Further...
 
-We plan to ...
 
 ## File description
 

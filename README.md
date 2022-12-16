@@ -70,8 +70,23 @@ void move_right(PIO pio, uint sm_x, uint sm_y){
 ```
 
 **PICO4ML_IMU**
-
-xxxx
+Initialize three ports for output and communication between RP2040 and Pico4ML:
+```c
+  ICM42622::Icm42622Init();
+  gpio_init(26);
+  gpio_set_dir(26, GPIO_OUT);
+  gpio_init(27);
+  gpio_set_dir(27, GPIO_OUT);
+  gpio_init(28);
+  gpio_set_dir(28, GPIO_OUT);
+``` 
+Get the accelerometer value for the IMU
+```c
+ICM42622::Icm42622ReadGyro(&x,&y,&z);
+ICM42622::Icm42622ReadAccel(&accex,&accey,&accez);
+//printf("Gyro: X:%.2f, Y: %.2f\n",x,y);
+printf("Acce: X:%.2f, Y: %.2f,Z:%.2f\n",accex,accey,accez);
+``` 
 
 **RP2040_Servo**
 
@@ -114,10 +129,7 @@ int get_pattern(uint pin1, uint pin2, uint pin3){
     return pattern;
 }
 ```
-
-
-xxxx
-
+After got the integer value of the pattern by applying the 'left shift' operation combined with the 'OR' operation we can directly return the pattern value.
 ## Further...
 
 We plan to ...
@@ -129,4 +141,8 @@ We plan to ...
 【README_midpoint】: Our midpoint project report.
 
 【code/IBICF/motor/pwm_new.c】: Main code for RP2040_Drone.
+
+【code/IMU_Part】: The main code for enable the IMU and using the accelerometer value to control the direction of the drone's flying.
+
+
 

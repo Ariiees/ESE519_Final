@@ -1,4 +1,4 @@
-# ESE519_Finald
+# ESE519_Final
 
 For ESE 519 Final project. balanced board controled Drone and Panel kit Camera.
 

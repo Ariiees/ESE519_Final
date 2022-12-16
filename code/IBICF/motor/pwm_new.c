@@ -63,39 +63,36 @@ void pio_pwm_set_level(PIO pio, uint sm, uint32_t level) {
 }
 
 //右(x0)---左(x255), 前(y0)---后(y255)
+//118->1.497v  210->2.684v  50->629.6mv
 //partten: 000
 void stay(PIO pio, uint sm_x, uint sm_y){
-    pio_pwm_set_level(pio, sm_x, 153);
-    pio_pwm_set_level(pio, sm_y, 140); 
+    pio_pwm_set_level(pio, sm_x, 118);
+    pio_pwm_set_level(pio, sm_y, 118); 
     // sleep_ms(10000);
 }
 
 // partten: 001
 void move_forward(PIO pio, uint sm_x, uint sm_y){
-    pio_pwm_set_level(pio, sm_x, 145);
+    pio_pwm_set_level(pio, sm_x, 125);
     pio_pwm_set_level(pio, sm_y, 77);
-    sleep_ms(5000);
 }
 
 // partten: 010
 void move_back(PIO pio, uint sm_x, uint sm_y){
-    pio_pwm_set_level(pio, sm_x, 162);
-    pio_pwm_set_level(pio, sm_y,205);
-    sleep_ms(5000);
+    pio_pwm_set_level(pio, sm_x, 122);
+    pio_pwm_set_level(pio, sm_y, 205);
 }
 
 //partten: 011
 void move_left(PIO pio, uint sm_x, uint sm_y){
-    pio_pwm_set_level(pio, sm_x, 95);
-    pio_pwm_set_level(pio, sm_y, 77);
-    sleep_ms(5000);
+    pio_pwm_set_level(pio, sm_x, 85);
+    pio_pwm_set_level(pio, sm_y, 120);
 }
 
 //partten: 100
 void move_right(PIO pio, uint sm_x, uint sm_y){
-    pio_pwm_set_level(pio, sm_x, 200);
-    pio_pwm_set_level(pio, sm_y, 180);
-    sleep_ms(5000);
+    pio_pwm_set_level(pio, sm_x, 155);
+    pio_pwm_set_level(pio, sm_y, 117);
 }
 
 

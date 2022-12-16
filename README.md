@@ -269,5 +269,7 @@ We plan to ...
 
 【code/IMU_Part】: The main code for enable the IMU and using the accelerometer value to control the direction of the drone's flying.
 
+【code/cam_tracking】: The main code for camera tracking and servo controlling
+
 
 

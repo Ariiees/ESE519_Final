@@ -139,10 +139,6 @@ if(accex >= -1.1 && accex <= -0.7)
     }
 ```
 
-**RP2040_Servo**
-
-xxxx
-
 **PICO4ML_Camera**
 
 xxxx

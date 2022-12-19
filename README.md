@@ -13,7 +13,7 @@ Yuxin Wang: https://github.com/Ariiees
 
 ## What it does?
 
-You coud using a balanced board to control the fly of the drone in real time(mimic the behavior of the joystick) which is also the main part to control the drone. 
+You coud using a balanced board to control the fly of the drone in real time(mimic the behavior of the joystick) which is also the main part to control the drone. At the same time, we also create a camera panel which can track the drone's trajectory by search its front LED and rotate with it.
 
 ### Demo
 
